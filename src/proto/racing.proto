@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package racing;
+
+service RacingService {
+  rpc Reset(ResetRequest) returns (ResetResponse);
+  rpc Step(StepRequest) returns (StepResponse);
+}
+
+message ResetRequest {
+  int32 seed = 1;
+}
+
+message ResetResponse {
+  repeated float observation = 1;
+}
+
+message StepRequest {
+  repeated float action = 1;
+}
+
+message StepResponse {
+  repeated float observation = 1;
+  bool terminated = 3;
+  bool truncated = 4;
+}

@@ -1,0 +1,55 @@
+env:
+  name: "RacingEnv-v0"
+  address: localhost:50051
+  obs_dim: 11
+  action_dim: 2
+  grpc_timeout: 100
+
+reward: None
+
+####
+
+# agent:
+#   algorithm: "PPO"
+
+# training:
+#   device: "cuda"
+#   num_workers: 1
+#   iterations: 10000
+#   checkpoint_freq: 10
+#   max_episode_steps: 1024
+#   train_batch_size: 512
+#   minibatch_size: 128
+#   rollout_fragment_length: 64 
+#   lr: 0.0003
+
+####
+
+agent:
+  algorithm: "SAC"
+
+training:
+  device: "cuda"
+  num_workers: 1
+  iterations: 10000
+  checkpoint_freq: 10
+  max_episode_steps: 8192
+  train_batch_size: 512
+  minibatch_size: 64
+  rollout_fragment_length: 32
+  log_freq: 1
+
+####
+
+# agent:
+#   algorithm: "IMPALA"
+
+# training:
+#   device: "cuda"
+#   num_workers: 1
+#   iterations: 10000
+#   checkpoint_freq: 10
+#   max_episode_steps: 1024
+#   train_batch_size: 512
+#   minibatch_size: 128
+#   rollout_fragment_length: 64 
